@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff7eb3, #65c7f7, #a8ff78, #fc5c7d, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.date {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out forwards;
+    display: none; 
+}
+
+.gift-box {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    margin: 0 auto; 
+}
+
+.gift-box .lid {
+    background: #f39c12;
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    animation: wiggle 2s infinite ease-in-out;
+}
+
+.gift-box .box {
+    background: #e74c3c;
+    width: 150px;
+    height: 110px;
+    position: absolute;
+    top: 40px;
+    border-radius: 5px;
+}
+
+.gift-box .ribbon-horizontal {
+    background: #fff;
+    width: 150px;
+    height: 10px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+.gift-box .ribbon-vertical {
+    background: #fff;
+    width: 10px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
+
+.click-me {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    animation: fadeIn 2s infinite alternate;
+    transition: opacity 0.5s ease-out;
+}
+
+.click-me.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out forwards;
+    padding: 0 20px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .gift-box {
+        width: 100px;
+        height: 100px;
+    }
+
+    .gift-box .lid {
+        width: 100px;
+        height: 30px;
+    }
+
+    .gift-box .box {
+        width: 100px;
+        height: 70px;
+    }
+
+    .gift-box .ribbon-horizontal {
+        width: 100px;
+        height: 8px;
+        top: 40px;
+    }
+
+    .gift-box .ribbon-vertical {
+        width: 8px;
+        height: 100px;
+        left: 46px;
+    }
+
+    .click-me {
+        font-size: 1rem;
+    }
+
+    #message {
+        font-size: 1.2rem;
+    }
+}
